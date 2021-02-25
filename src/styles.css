@@ -9,5 +9,10 @@ body {
   margin  : 0;
   background: rgb(192,174,238);
   background: radial-gradient(circle, rgba(192,174,238,1) 12%, rgba(165,148,233,1) 100%);
+  font-family:  'Akaya Telivigala', cursiva;
+  background: url(assets/img/olaMar.jpeg) no-repeat center center fixed;
+  background-size: 95%;
 }
+
+
 

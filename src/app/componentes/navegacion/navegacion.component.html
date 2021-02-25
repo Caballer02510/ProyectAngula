@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-sm sticky-top bg-white">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" routerLink="/"> <img src="assets/iconos/icono.png" width="40px">Angular DAW</a>
+    <a class="navbar-brand" routerLink="/"> <img src="assets/iconos/icono.png" width="40px" float>Angular DAW</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
                 <a class="nav-link" routerLink="/home" routerLinkActive="{{estiloActivo}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/about" routerLinkActive="{{estiloActivo}}">About</a>
+                <a class="nav-link" routerLink="/about" routerLinkActive="{{estiloActivo}}">Presentación</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="/loteria" routerLinkActive="{{estiloActivo}}">Lotería</a>
@@ -20,7 +20,7 @@
                 <a class="nav-link" routerLink="/calculadora" routerLinkActive="{{estiloActivo}}"><i class="fa fa-calculator" routerLinkActive="fa-spin" aria-hidden="true"></i>Calculadora</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/tuberias" routerLinkActive="{{estiloActivo}}">Tuberías</a>
+               
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="/estructuras" routerLinkActive="{{estiloActivo}}">Estructuras</a>
@@ -28,16 +28,31 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/formulario" routerLinkActive="{{estiloActivo}}">Formulario</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/crudlocal" routerLinkActive="{{estiloActivo}}">Crud Local</a>
-            </li>            
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/crud" routerLinkActive="{{estiloActivo}}">Crud</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/listarPerfiles" routerLinkActive="{{estiloActivo}}">listarPerfiles</a>
-            </li>
         </ul>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">            
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Crud</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="nav-link" routerLink="/crudlocal" routerLinkActive="{{estiloActivo}}">Crud Local</a>
+                            <a class="nav-link" routerLink="/crud" routerLinkActive="{{estiloActivo}}">Crud</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Listar</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="nav-link" routerLink="/listarPerfiles" routerLinkActive="{{estiloActivo}}">listarPerfiles</a>
+                            <a class="nav-link" routerLink="/tuberias" routerLinkActive="{{estiloActivo}}">Tuberías</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         <ul class="navbar-nav mt-2 mt-lg-0">
             <ng-template [ngIf]='!fnLogged()' [ngIfElse]='salir'>
             <li class="nav-item">
