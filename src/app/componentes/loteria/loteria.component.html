@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">Lotería (Comunicación entre componentes)</div>
+      <div class="card-body">
+        <button class="btn btn-primary btn-block" (click)="numero1.obtenAleatorio();numero2.obtenAleatorio()">Hacer una Jugada</button>
+        <hr>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <app-generar-loteria #numero1></app-generar-loteria>
+            </div>
+            <div class="col-md-6">
+              <app-generar-loteria #numero2></app-generar-loteria>
+            </div>
+          </div>
+        </div>
+        <hr class="py-2">
+
+        <p class="h3 text-center" *ngIf="numero1.digito&&(numero1.digito==numero2.digito); else manolito">HAS GANADO</p>
+        <ng-template #manolito>
+          <p class="h3 text-center" *ngIf="numero1.digito;else primeraJugada">SIGUE JUGANDO</p>
+          <ng-template #primeraJugada>
+            <p class="h3 text-center">Presione el botón para comenzar</p> 
+          </ng-template>
+        </ng-template>
+        <p class="text-center" *ngIf="numero1.digito">Los números que se han obtenido son: {{numero1.digito}} {{numero2.digito}}</p>
+        <hr class="py-2">
+        <app-generar-loteria entrada="1323"></app-generar-loteria>
+        <app-generar-loteria [objetoEntrada]=objeto></app-generar-loteria>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">CRUD Local</div>
+      <div class="card-body">
+        <h5 class="text-center" *ngIf="!notas.length">Inserta una nota</h5>
+        <table class="table" *ngIf="notas.length">
+          <thead>
+              <tr><th>id</th><th>Título</th><th>Contenido</th></tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let nota of notas" (click)="object.assign(notaSeleccionada,nota)">
+              <td >{{nota.id}}</td>
+              <td>{{nota.titulo}}</td>
+              <td>{{nota.contenido}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="input-group">
+          <input class="form-control" type="text" [(ngModel)] ="notaNueva.titulo" placeholder="Título">
+          <input class="form-control" type="text" [(ngModel)] ="notaNueva.contenido" placeholder="Contenido">
+        </div>
+        <button class="btn btn-primary btn-block" (click)="insertarNota()">Insertar nota</button>
+        <ng-template [ngIf]="notaSeleccionada.id!=-1">
+          <br>
+          <div class="input-group">
+            <input class="form-control" type="text" [(ngModel)]="notaSeleccionada.titulo">
+            <input class="form-control" type="text" [(ngModel)]="notaSeleccionada.contenido">
+          </div>
+          <div class="btn-group btn-block">
+            <button class="btn btn-primary" (click)="editarNota(notaSeleccionada)">Editar nota</button>
+            <button class="btn btn-secondary" (click)="notaSeleccionada.id=-1">Cancelar</button>
+            <button class="btn btn-danger" (click)="borrarNota(notaSeleccionada)">Eliminar nota</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    
+  </div>
+</div>

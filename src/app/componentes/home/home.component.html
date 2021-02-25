@@ -1,0 +1,36 @@
+<div class="jumbotron mt-n5">
+  <h1 class="display-3 text-center">Esta es la página de Inicio</h1>
+  <p class="lead text-center">Curso de Angular para la asignatura de DAW</p>
+  <hr>
+  <p class="lead text-center">
+    Este es un link de enlace  <a class="btn btn-primary" routerLink="/about" role="button">About</a>
+  </p>
+</div>
+<div class="row justify-content-center pb-5 mt-n5">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">Pruebas Iniciales</div>
+      <div class="card-body">
+        <div class="input-group">
+          <input class="form-control" type="text" [(ngModel)]="variable">
+          <h3>{{variable}}</h3>
+        </div>
+        <hr>
+        <div class="input-group">
+          <input class="form-control" placeholder="Introduce un número" type="number" [(ngModel)]="num1">
+          <h3 *ngIf="num1==0">El número 1 es un 0</h3>
+          <h3 *ngIf="num1!=0">El número 1 no es un 0</h3>
+        </div>
+        <hr>
+        <h4 *ngIf="usuarioSel">El usuario seleccionado es {{usuarioSel.nombre +" "+ usuarioSel.apellido}}</h4>
+        <h4 *ngIf="!usuarioSel">Selecciona un usuario</h4>
+        
+        <ul class="list-group">
+            <li class="list-group-item" (click)="selUser(usuario)" *ngFor="let usuario of usuarios"> 
+              {{usuario.nombre + " " + usuario.apellido}} 
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

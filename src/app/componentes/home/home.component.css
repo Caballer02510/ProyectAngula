@@ -1,0 +1,9 @@
+.list-group-item{
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+.jumbotron{
+  padding : 4rem 2rem;
+  border-radius: 1em;
+}
