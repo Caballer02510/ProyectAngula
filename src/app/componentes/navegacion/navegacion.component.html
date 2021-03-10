@@ -66,6 +66,9 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/perfil" routerLinkActive="{{estiloActivo}}">Perfil</a>
             </li>
+            <li class="nav-item" *ngIf='fnAdmin'>
+                <a class="nav-link" routerLink="/admin" routerLinkActive="{{estiloActivo}}"><i class="fas-fa-lock"></i> Admin</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" (click)="doLogout()" routerLink='.'>Logout</a>
             </li>
